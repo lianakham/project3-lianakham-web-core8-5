@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Слайдер</title>
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="/swiper-bundle.css">
+        <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
     </head>
      
@@ -37,7 +37,7 @@
               </div>
               <div class="swiper-slide">
                 <div class="slide-logo">
-                    <img src="/img/samsung.svg" alt="samsung-logo" class="brand-logo2">
+                    <img src="/img/samsung.png" alt="samsung-logo" class="brand-logo2">
                 <button class="btn-follow">
                     <img src="/img/go.svg" alt="details">
                 </button>
@@ -98,10 +98,10 @@
         </div>
 
 
-            <div class="swiper2">      
-            <div class="swiper-wrapper grid">
+            <div class="pc-container">      
+            <div class="swiper-wrapper container-grid">
                 <!-- Slides -->
-                <div class="swiper-slide">
+                <div class="swiper-slide grid-list">
                   <div class="slide-logo">
                       <img src="/img/lenovo.svg" alt="lenovo-logo" class="brand-logo1">
                   <button class="btn-follow">
@@ -111,7 +111,7 @@
                 </div>
                 <div class="swiper-slide">
                   <div class="slide-logo">
-                      <img src="/img/samsung.svg" alt="samsung-logo" class="brand-logo2">
+                      <img src="/img/samsung.png" alt="samsung-logo" class="brand-logo2">
                   <button class="btn-follow">
                       <img src="/img/go.svg" alt="details">
                   </button>
@@ -150,7 +150,7 @@
                   </div>
                 </div>
                 <div class="swiper-slide">
-                  <div class="slide-logo7">
+                  <div class="slide-logo">
                       <img src="/img/acer.svg" alt="acer-logo" class="brand-logo7">
                   <button class="btn-follow">
                       <img src="/img/go.svg" alt="details">
@@ -158,25 +158,55 @@
                   </div>
                 </div>
                 <div class="swiper-slide">
-                  <div class="slide-logo8">
+                  <div class="slide-logo">
                       <img src="/img/sony.svg" alt="sony-logo" class="brand-logo8">
                   <button class="btn-follow">
                       <img src="/img/go.svg" alt="details">
                   </button>
                   </div>
                 </div>
+                <div class="swiper-slide">
+                    <div class="slide-logo">
+                        <img src="/img/acer.svg" alt="acer-logo" class="brand-logo7">
+                    <button class="btn-follow">
+                        <img src="/img/go.svg" alt="details">
+                    </button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="slide-logo">
+                        <img src="/img/sony.svg" alt="sony-logo" class="brand-logo8">
+                    <button class="btn-follow">
+                        <img src="/img/go.svg" alt="details">
+                    </button>
+                    </div>
+                  </div><div class="swiper-slide">
+                    <div class="slide-logo">
+                        <img src="/img/acer.svg" alt="acer-logo" class="brand-logo7">
+                    <button class="btn-follow">
+                        <img src="/img/go.svg" alt="details">
+                    </button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="slide-logo">
+                        <img src="/img/sony.svg" alt="sony-logo" class="brand-logo8">
+                    <button class="btn-follow">
+                        <img src="/img/go.svg" alt="details">
+                    </button>
+                    </div>
+                  </div>
               
             
                 </div>
             </div>
             <div class="read-more">
                 <button class="btn-read">
-                <img src="/img/ReadMore.svg" alt="readmore">
             </button>
                  </div>
 
 
-        <script src="/swiper-bundle.js"></script>
+                 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script>
              const swiper = new Swiper('.swiper', {
                     // Optional parameters
@@ -188,6 +218,18 @@
                         el: '.swiper-pagination',
                     }
                     }); 
+            const btn = document.querySelector('.btn-read');
+            const grid = document.querySelector('.container-grid');
+
+
+            btn.addEventListener('click', () => {
+              grid.classList.toggle('expanded');
+              btn.classList.toggle('active');
+        
+            })
+
+
+            
 
         </script>
     </body>
