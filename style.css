@@ -1,3 +1,18 @@
+@font-face {
+    font-family: "ttlakes";
+    src: url("/font/TTLakes-Regular.woff");
+    font-weight: normal;
+}   
+ @font-face {
+    font-family: "ttlakes";
+    src: url("/font/TTLakes-Bold.woff");
+    font-weight: 600;
+ }
+ @font-face {
+    font-family: "ttlakes";
+    src: url("/font/TTLakes-DemiBold.woff");
+    font-weight: 700;
+}
 body {
     box-sizing: border-box;
     width: 100%;
@@ -13,7 +28,7 @@ body {
     background-color: #ffffff;
 }
 .header h1 {
-    font-size: 16px;
+    font-size: 16px; 
     letter-spacing: -0.2px;
     color: #7E7E82;
     overflow-wrap: break-word;
@@ -22,8 +37,7 @@ body {
 .swiper {
     height: 120px;
     width: 100%;
-    display: flex;
-    
+    display: flex; 
 }
 .swiper-slide {
     width: 80%;
@@ -38,7 +52,9 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: #Ffffff;
-    
+}
+.swiper-pagination-bullet-active {
+    background: #B5B6BC;
 }
 .brand-logo1,
 .brand-logo2,
@@ -66,25 +82,15 @@ body {
     border: none;
     margin-right: 5px;
 }
-@media screen and (min-width: 320px) {
-    .swiper1 {
+@media screen and (max-width: 768px) {
+    .swiper {
+        display: flex;
+    }
+    .swiper .swiper-slide {
         display: block;
-        
-    }
-    .pc-container {
-        display: none;
-    }
-    .btn-read {
-        display: none;
-    }
-}
-@media screen and (min-width: 400px) {
-    .swiper1 .swiper-slide {
         width: auto !important;
-    }   
-    .pc-container {
-        display: none;
-    }  
+    }
+    .container-grid,
     .btn-read {
         display: none;
     }
@@ -92,40 +98,22 @@ body {
 @media screen and (min-width: 768px) {
     .header {
         height: 56px;
-        
     }
     h1 {
         padding-left: 5px;
     }
-    .swiper1 {
+    .swiper {
         display: none;
     }
-    
-    .pc-container {
+    .container-grid {
         width: 100%;
         display: grid;
         padding: 10px;
         background-color: #F8F8F8;
-        
-    }
-    .container-grid {
-        width: 100%;
-        display: grid !important;
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: 10px;
-        max-height: 160px;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
+        grid-gap: 10px;  
     }
-    .container-grid.expanded {
-        max-height: 700px;
-    }
-    .pc-container .swiper-slide {
-        width: 224px;
-        height: 72px;
-        background-color: #ffffff;
-    }
-    .slide-logo {
+    .grid-item {
             border-radius: 6px;
             border: 1px solid #EAEAEA;
             width: 224px;
@@ -133,20 +121,11 @@ body {
             display: flex;
             justify-content: space-between;
             align-items: center;
-           
+            background-color: #ffffff;
     }
-    .slide-logo:nth-child(n + 7) {
+    .grid-item:nth-child(n + 7) {
         display: none;
-        border-radius: 6px;
-        border: 1px solid #EAEAEA;
-        width: 224px;
-        height: 72px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
     }
-    
     .btn-read {
         display: inline-block;
         width: 134px;
@@ -156,6 +135,9 @@ body {
         position: relative;
         left: 0px;
         top: 0px;
+    }
+    .container-grid.expanded .grid-item {
+        display: flex;
     }
     .btn-read::before {
         width: 134px;
@@ -167,21 +149,20 @@ body {
        
     }
     .btn-read.active::before {
-        
         content: url('/img/ReadMore\ \(1\).svg');
         background-color: transparent;
         border: none;
         width: 134px;
         height: 24px;
-       
     }
+   
 }   
 @media screen and (min-width: 1120px) {
     .container-grid {
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 10px;
     }
-    .pc-container .swiper-slide {
+    .container-grid .grid-item {
         width: 224px;
     }
 }
